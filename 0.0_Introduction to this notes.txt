@@ -1,0 +1,103 @@
+Background:
+
+ Python is an dynamical strong typed language. It is well supported by 
+ community and there are many well designed scientific libs.
+
+ As a physics student in Imperial College, I was taught python last year
+ and I found it is slightly different from the language we usually
+ used (C and VB) when I was in China since it is an interpreted language.
+ No compiling process before running python script or it is compiled to
+ byte code by python VM/interpreter. As a very high level language,
+ Python supports abundant data types and high level structures and also
+ you could write python code use any programming digram (even functional
+ programming since  function is first class which means you could use 
+ function as arguments or returned value as another function directly [I
+ meant it literally, not a tricky as in C by using a pointer, this is 
+ awesome feature]).
+ 
+ Because I am learning a very high level language now, the datastructure
+ knowledge in using C is not very helpful and I thinke I should 
+ review data structure & algorithms by using python.
+
+ 
+ I hope I could master python since is interesting, useful, handy script 
+ language. OK, also multi-platform. This python learning note is just 
+ for making me keeping a note. Also, I hope it could help other non-CS
+ students who is learning data structures and algorithms by themself.
+
+ I did not review the very basic topics like big O notation and mathe
+ induction.
+
+ 
+ Python supports OOP fully as everything in python is an object. In this 
+ note, I'd like to learn both OO and some basic algorithm.
+
+
+Short Introduction to Python features:
+
+ There are many implementation of python interpreters. Some of my friends
+ who learning CS recommended PyPy since it is an JIT compiler and
+ certainly would provide higher performance. I used |Cython| since this
+ is the default environment used in Imperial College. Considering about
+ the GIL (Global Interpreter Lock), I guess I would ignore the 
+ multi-thread totally and I might learn sth about multi processing to 
+ use other cores in my laptop.
+ 
+ About Python: 
+	1. everything is an object, for example int obj in Cython.
+	   everything in python is an object implemented by C 
+		structure.( I admit I do not 
+	   understand it and too lazy to find all the code)
+	   
+	   Also, GC is implemented by adding reference count
+	   
+		#define PyObject_HEAD                 \
+				Py_ssize_t ob_refcnt;         \
+				struct _typeobject *ob_type;	/* uh, sth preprocesser.
+												   it seems that there is 
+												   only reference count used
+												   in GC and type pointer
+												*/
+		typedef struct _object {
+					PyObject_HEAD 	/*	ok, I didn't understand the header
+										but this is not the point		
+									*/
+					10} PyObject;	//PyObject--Base class to all
+		typedef struct {
+				PyObject_HEAD
+				long ob_ival;
+				} PyIntObject;		//Int object
+	
+	2. Name space. In python, scope is searched by LEGB rule and name space 
+		is implemented by python dict.
+
+	3. Built in types.  null(None)
+						numbers(bool, int, long, float, complex)
+						sequence(str, unicode, list, tuple)
+						dict(dict)
+						set(set, frozenset)
+		we know that numbers could be coerced and python support any large 
+		number your memery could deal with.
+		Only list, set and dict are mutable.
+	4.formate. Python support formate while I could use % operator
+	  as in C.
+	5.Control. if, elif, else, continue, break, 
+	6.loops. while, for(sequence iteration, not same as in C)
+
+Tips: Python do not optimise tail recursion automatically since inventor of 
+	python want the right stacktrace(or other similar reasons, I don't 
+	remember it exactly).
+
+
+
+Reference: 
+	1. Introduction to algorithms, third edition, By Thomas H. Cormen,
+	   Charles E. Leiserson, Ronald L. Rivest and Clifford Stein
+	   (This is an excellent textbook, in my opinion, much better
+	    than TAOPL, I think I should read the whole book if I have time)
+	2. Data Structures and Algorithms with Object-Oriented Design
+	   Patterns in Python by Bruno R. Preiss, B.A.Sc., M.A.Sc.
+	   Ph.D., P.Eng. 
+	   (Very good examples and python code)
+	3. Core Python programming, second edition
+	   (an amazing python tutorial)
