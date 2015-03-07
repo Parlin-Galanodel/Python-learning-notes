@@ -83,6 +83,8 @@ Short Introduction to Python features:
 	  as in C.
 	5.Control. if, elif, else, continue, break, 
 	6.loops. while, for(sequence iteration, not same as in C)
+	7.Variables in python is just reference. GC is implemented by 
+	  reference count. An object not referenced will be destroyed.
 
 Tips: Python do not optimise tail recursion automatically since inventor of 
 	python want the right stacktrace(or other similar reasons, I don't 
