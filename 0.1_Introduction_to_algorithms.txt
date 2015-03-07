@@ -26,7 +26,7 @@ are all composed by basic operations.
 # procedure or solving a problem, usually with the requirement that
 # the procedure terminate at some point. Specific algorithms sometimes
 # also go by the name method, procedure, or technique. The word
-# "algorithm" is a distortion of al-Khw¨¡rizm¨©, a Persian mathematician
+# "algorithm" is a distortion of al-Khwarizmi, a Persian mathematician
 # who wrote an influential treatise about algebraic methods. The process
 # of applying an algorithm to an input to obtain an output is called a
 # computation.
@@ -54,8 +54,8 @@ Induction, Recursion and Reduction:
 # Induction (or, mathematical induction) is used to show that a
 # statement is true for a large class of objects (often the natural
 # numbers). We do this by first showing it to be true for a base case
-# (such as the number 1) and then showing that it ¡°carries over¡± from
-# one object to the next (if it¡¯s true for n ¨C1, then it¡¯s true for n).
+# (such as the number 1) and then showing that it "carries over" from
+# one object to the next (if it's true for n-1, then it's true for n).
  
 # Recursion is what happens when a function calls itself. Here we
 # need to make sure the function works correctly for a (nonrecursive)
@@ -65,5 +65,5 @@ Induction, Recursion and Reduction:
 # Reduction means transforming one problem to another. We normally
 # reduce an unknown problem to one we know how to solve. The reduction
 # may involve transforming both the input (so it works with the new 
-# problem) and the output (so it¡¯s valid for the original problem).
+# problem) and the output (so it's valid for the original problem).
  
