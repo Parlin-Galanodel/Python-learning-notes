@@ -103,3 +103,7 @@ Reference:
 	   (Very good examples and python code)
 	3. Core Python programming, second edition
 	   (an amazing python tutorial)
+	4. A byte of Pyton (introduction to python basic syntax)
+	5. Python official tutorial. (this is reallly a very good tutorial 
+	   for beginers)
+
