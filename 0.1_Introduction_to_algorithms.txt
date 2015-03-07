@@ -1,0 +1,69 @@
+I do not know the definitions precisely and luckily, I do not need to
+remember them. So I just google the basic definitions and copied them
+here. These words come from Wolfram.
+
+# Turing Machine:A Turing machine is a theoretical computing machine
+# invented by Alan Turing (1937) to serve as an idealized model for 
+# mathematical calculation. A Turing machine consists of a line of cells
+# known as a "tape" that can be moved back and forth, an active element
+# known as the "head" that possesses a property known as "state" and 
+# that can change the property known as "color" of the active cell
+# underneath it, and a set of instructions for how the head should 
+# modify the active cell and move the tape (Wolfram 2002, pp. 78-81).
+# At each step, the machine may modify the color of the active cell,
+# change the state of the head, and then move the tape one unit to the
+# left or right.
+
+In principle, we do not have access to any form of current excution or 
+parallel calculation if we have only one core CPU.
+
+Basicaly, the standard operations such as comparision, memory access,
+arithmetics and so non all take constant (I guess they might take 
+different time even though they are all constant) time. Complex operations
+are all composed by basic operations.
+
+# An algorithm is a specific set of instructions for carrying out a 
+# procedure or solving a problem, usually with the requirement that
+# the procedure terminate at some point. Specific algorithms sometimes
+# also go by the name method, procedure, or technique. The word
+# "algorithm" is a distortion of al-Khw¨¡rizm¨©, a Persian mathematician
+# who wrote an influential treatise about algebraic methods. The process
+# of applying an algorithm to an input to obtain an output is called a
+# computation.
+
+The common time complexities are:
+# constant        O(1)          
+# logarithmic     O(lgn)        T(n)=T(n/2)+1
+# linear          O(n)          T(n)=T(n-1)+1 Or T(n)=T(n/2)+n
+# loglinear       O(nlgn)       T(n)=2T(n/2)+1
+# quadratic       O(n^2)        T(n)=T(n-1)+n
+# cubic           O(n^3)        
+# Polynomial      O(n^k)        
+# Exponential     O(k^n)        T(n)=k*T(n-1)+1
+# Factorial       O(n!)         
+
+Tips: In python, cprofiler and profile are common module used to 
+      analyse algorithms.
+      
+      Decimal module is a good tool to do calculation in decimal.
+      This would help us get rid of anoying comparision works.
+      
+ 
+Induction, Recursion and Reduction:
+
+# Induction (or, mathematical induction) is used to show that a
+# statement is true for a large class of objects (often the natural
+# numbers). We do this by first showing it to be true for a base case
+# (such as the number 1) and then showing that it ¡°carries over¡± from
+# one object to the next (if it¡¯s true for n ¨C1, then it¡¯s true for n).
+ 
+# Recursion is what happens when a function calls itself. Here we
+# need to make sure the function works correctly for a (nonrecursive)
+# base case and that it combines results from the recursive calls 
+# into a valid solution.
+ 
+# Reduction means transforming one problem to another. We normally
+# reduce an unknown problem to one we know how to solve. The reduction
+# may involve transforming both the input (so it works with the new 
+# problem) and the output (so it¡¯s valid for the original problem).
+ 
