@@ -112,7 +112,3 @@ Reference:
 	4. A byte of Pyton (introduction to python basic syntax)
 	5. Python official tutorial. (this is reallly a very good tutorial 
 	   for beginers)
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
