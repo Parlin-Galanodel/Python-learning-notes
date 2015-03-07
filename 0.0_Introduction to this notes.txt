@@ -3,34 +3,38 @@ Background:
  Python is an dynamical strong typed language. It is well supported by 
  community and there are many well designed scientific libs.
 
- As a physics student in Imperial College, I was taught python last year
- and I found it is slightly different from the language we usually
+ As a physics student in Imperial College, I was required to learn python
+ last year and I found it is slightly different from the language we usually
  used (C and VB) when I was in China since it is an interpreted language.
  No compiling process before running python script or it is compiled to
  byte code by python VM/interpreter. As a very high level language,
  Python supports abundant data types and high level structures and also
  you could write python code use any programming digram (even functional
- programming since  function is first class which means you could use 
- function as arguments or returned value as another function directly [I
+ programming since function is first class which means you could use 
+ function as arguments or returned value in another function directly [I
  meant it literally, not a tricky as in C by using a pointer, this is 
- awesome feature]).
+ awesome feature]), map, filter, reduce, closure are supported as well.
  
- Because I am learning a very high level language now, the datastructure
- knowledge in using C is not very helpful and I thinke I should 
- review data structure & algorithms by using python.
+ Because I am learning a very high level language now, the basic 
+ data structures knowledge in using C is not very helpful and I 
+ think I it's a good time to review data structures and then learn 
+ some algorithms by using python as implementation in python is easier 
+ than that in C, also, class looks better than structure.
 
  
- I hope I could master python since is interesting, useful, handy script 
+ I hope I could master python since it is interesting, useful, handy script 
  language. OK, also multi-platform. This python learning note is just 
  for making me keeping a note. Also, I hope it could help other non-CS
  students who is learning data structures and algorithms by themself.
 
- I did not review the very basic topics like big O notation and mathe
+ I did not review the very basic topics like big O notation and math
  induction.
 
  
- Python supports OOP fully as everything in python is an object. In this 
- note, I'd like to learn both OO and some basic algorithm.
+ Python supports OOP fully as everything in python is an object. I guess
+ this is good news especially when we could write code not in OO way.
+ Sounds better than JAVA. In this  note, I'd like to learn both OO and
+ some basic algorithm.
 
 
 Short Introduction to Python features:
@@ -47,7 +51,7 @@ Short Introduction to Python features:
 	1. everything is an object, for example int obj in Cython.
 	   everything in python is an object implemented by C 
 		structure.( I admit I do not 
-	   understand it and too lazy to find all the code)
+	   understand it and I am too lazy to find all the code)
 	   
 	   Also, GC is implemented by adding reference count
 	   
@@ -56,7 +60,7 @@ Short Introduction to Python features:
 				struct _typeobject *ob_type;	/* uh, sth preprocesser.
 												   it seems that there is 
 												   only reference count used
-												   in GC and type pointer
+												   in GC and pointer to type
 												*/
 		typedef struct _object {
 					PyObject_HEAD 	/*	ok, I didn't understand the header
@@ -77,12 +81,16 @@ Short Introduction to Python features:
 						dict(dict)
 						set(set, frozenset)
 		we know that numbers could be coerced and python support any large 
-		number your memery could deal with.
+		number your memery could dealt with.
+		None, 0, empty list/dict/tuple/set are seen as False when used 
+		as bool type.
 		Only list, set and dict are mutable.
-	4.formate. Python support formate while I could use % operator
-	  as in C.
+	4.formate. Python support formate method for strings
+	  while I could use % operator as in C.
 	5.Control. if, elif, else, continue, break, 
 	6.loops. while, for(sequence iteration, not same as in C)
+	7.Variables in python is just reference. GC is implemented by 
+	  reference count. An object not referenced will be destroyed.
 
 Tips: Python do not optimise tail recursion automatically since inventor of 
 	python want the right stacktrace(or other similar reasons, I don't 
@@ -101,3 +109,6 @@ Reference:
 	   (Very good examples and python code)
 	3. Core Python programming, second edition
 	   (an amazing python tutorial)
+	4. A byte of Pyton (introduction to python basic syntax)
+	5. Python official tutorial. (this is reallly a very good tutorial 
+	   for beginers)

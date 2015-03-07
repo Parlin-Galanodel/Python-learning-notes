@@ -19,11 +19,22 @@
 #
 #   Linear Data Structures
 #       -- Stacks, queues, deque, lists
-#       python list is kind of array in C and would be seen
+#       python list is kind of array in C (every thread online
+#       said this while i am not quite sure since the element's id
+#       ) and would be seen
 #       as primitive data structure and used to implement other
 #       data structures without implementing array with list again
 #
-# I used old style or so-called classical class 
+# I used old style or so-called classical class for typing less words.
+# Old style class means super() method is not supported and 
+# constructor could only be refined by referring constructor
+# in base class explicitly. 
+# In, multiple inheritance, method resolution order, __mro__ is a 
+# little different. In old class, instead of diamond model, depth 
+# first searching is used.
+# Also, I found that Python do not support to write instance attributes
+# (self.attribute) as arguments in method. We have to set it to None,
+# a tricky way.
 
 class Stack:
     def __init__(self):
@@ -124,9 +135,9 @@ class singlyCyclelList:
         while current != item:
             prev=current
             current=current.getNext()
-            if current is self.head:
+            if current is self.head:    # is means same object
                 raise Exception('item is not in the list')
-            prev.setNext(current.getNext())
+        prev.setNext(current.getNext())
             
         
         
