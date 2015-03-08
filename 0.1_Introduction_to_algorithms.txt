@@ -66,4 +66,8 @@ Induction, Recursion and Reduction:
 # reduce an unknown problem to one we know how to solve. The reduction
 # may involve transforming both the input (so it works with the new 
 # problem) and the output (so it's valid for the original problem).
+
+
+Reference: 1.Introduction to Algorithms.
+	   2.wolfram
  
