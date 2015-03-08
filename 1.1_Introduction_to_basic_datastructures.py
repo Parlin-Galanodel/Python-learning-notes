@@ -35,6 +35,12 @@
 # Also, I found that Python do not support to write instance attributes
 # (self.attribute) as arguments in method. We have to set it to None,
 # a tricky way.
+# 
+# Tips: We do not need to write constructor in python, python would 
+# generate __new__ method automatically. We just need to write an
+# initialise function, __init__, which would be called automatically
+# when instantiating. Destructor, __del__, must be add when we 
+# need it, or, the object would be dealt totally by GC.
 
 class Stack:
     def __init__(self):

@@ -53,7 +53,10 @@ Short Introduction to Python features:
 		structure.( I admit I do not 
 	   understand it and I am too lazy to find all the code)
 	   
-	   Also, GC is implemented by adding reference count
+	   Also, GC is implemented by adding reference count. To help making 
+	   GC more efficient, I think should avoid cycle reference in our
+	   coding since cycle reference cost more resource and could be 
+	   detected only in a longer period.
 	   
 		#define PyObject_HEAD                 \
 				Py_ssize_t ob_refcnt;         \
