@@ -137,7 +137,8 @@ class singlyCyclelList:
             current=current.getNext()
             if current is self.head:    # is means same object
                 raise Exception('item is not in the list')
-        prev.setNext(current.getNext())
+        else:
+            prev.setNext(current.getNext())
             
         
         
