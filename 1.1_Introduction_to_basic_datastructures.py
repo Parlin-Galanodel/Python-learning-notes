@@ -76,7 +76,8 @@ class Stack:
     # Stack is a general model of memory and frequently used in 
     # balancing symbols(by maintaining a stack to be empty).
     # Also, it could be used to tracking errors as used in python 
-    # or tracking the 0s & 1s used to convert decimal to binary.
+    # or tracking the 0s & 1s used to convert decimal to binary(
+    # recursion problems to be exactly).
     # Stack is very important in parsing techniques.
         
 #########################################################
