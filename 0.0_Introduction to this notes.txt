@@ -94,6 +94,14 @@ Short Introduction to Python features:
 	6.loops. while, for(sequence iteration, not same as in C)
 	7.Variables in python is just reference. GC is implemented by 
 	  reference count. An object not referenced will be destroyed.
+	8.Functional programming features: 
+		map(func, sequence) map a funct to every elements in a sequence.
+		reduce(func,sequence) reduce a sequence to one variable by a rule
+			defined by the function.
+		filter(func, sequence): filter all the elements and keep the 
+			elements which return true when the function applied.
+		zip(sequence,sequence,...): return sequences combined by ith
+			item of each sequence.
 
 Tips: Python do not optimise tail recursion automatically since inventor of 
 	python want the right stacktrace(or other similar reasons, I don't 

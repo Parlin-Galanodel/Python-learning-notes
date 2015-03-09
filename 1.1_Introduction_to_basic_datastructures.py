@@ -20,10 +20,11 @@
 #   Linear Data Structures
 #       -- Stacks, queues, deque, lists
 #       python list is kind of array in C (every thread online
-#       said this while i am not quite sure since the element's id
-#       ) and would be seen
-#       as primitive data structure and used to implement other
-#       data structures without implementing array with list again
+#       said this while I am not quite sure since the element's id
+#       ) but list operation do have same time complexity as array.
+#       List would be seen as primitive data structure and used to
+#       implement other data structures without implementing array
+#       with list again
 #
 # I used old style or so-called classical class for typing less words.
 # Old style class means super() method is not supported and 
@@ -31,7 +32,7 @@
 # in base class explicitly. 
 # In, multiple inheritance, method resolution order, __mro__ is a 
 # little different. In old class, instead of diamond model, depth 
-# first searching is used.
+# first search is used.
 # Also, I found that Python do not support to write instance attributes
 # (self.attribute) as arguments in method. We have to set it to None,
 # a tricky way.
@@ -43,6 +44,11 @@
 # need it, or, the object would be dealt totally by GC.
 
 class Stack:
+    '''
+        A stack is an ordered collection of items where the addition 
+        of items and removal of existing items take place at the same
+        end. It is a Last-In, First-Out(LIFO) structure.
+    '''
     def __init__(self):
         self.items=[]
         
@@ -50,19 +56,28 @@ class Stack:
         return self.items==[]
         
     def push(self, item):
+        # considering about list is an array, append takes constant time
+        # and insert at the beginning takes linear time. 
         self.items.append(item)
         
     def pop(self):
         return self.items.pop()
         
     def getTop(self):
-        return self.items[len(self.items)-1]
+        if len(self(items))==0:
+            raise Exception('empty,stack')
+        return self.items[-1]
         
     def size(self):
         return len(self.items)
   
     def Clear(self):
         del self.items[:]
+    # Stack is a general model of memory and frequently used in 
+    # balancing symbols(by maintaining a stack to be empty).
+    # Also, it could be used to tracking errors as used in python 
+    # or tracking the 0s & 1s used to convert decimal to binary.
+    # Stack is very important in parsing techniques.
         
 #########################################################
 
@@ -145,17 +160,24 @@ class singlyCyclelList:
                 raise Exception('item is not in the list')
         else:
             prev.setNext(current.getNext())
-            
-        
-        
 
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
+# Tips:
+#       1. List is Array in C despite the id of elements are not 
+#          continuous. Elements in list are just pointers to objects.
+#          OK, I am trying to figure out how to write
+#          C Pythonicly.
+#           typedef struct              {
+#               PyObject_VAR_HEAD
+#               PyObject **ob_item      ;
+#               Py_ssize_t allocated;
+#                                       }
+#               PyListObject            ;
+#       2. Dict in python is implemented by hash table and all the 
+#          operations except sth like iteration all takes constant
+#          time.
+#
+#
+# References: 1. introduction to algorithms.
+#             2. Wikipedia (I do not want to say it, but I did not 
+#                have time to read books in library and so I used 
+#                wikipedia as cheat sheet)
