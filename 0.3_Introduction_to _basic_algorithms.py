@@ -109,9 +109,22 @@ def MCforPI(n):#find PI by Monty carlo method
     circle=filter(lambda (x,y): x**2+y**2<=1,points)#find points in quarter
                                                     #circle with radius 1
     # to make this block more efficiency, list could be replaced 
-    # by generator, a small optimization method.
+    # by generator, a small optimization
     PI='%.10f' % (1.*len(circle)/len(points)/0.25)
+    #I checked the value by another code below, to list cost too much 
+    #memory
+    
+#       count=0
+#   for i in xrange(n):
+#       a=f()           
+#       b=f()        
+#       if a**2+b**2 <= 1:
+#           count+=1    
+#       else:
+#           continue
+#   PI='%.10f' % (4.*count/n)
     return PI
+    
     
 #######################################
 # Greedy method & Dynamic Programming
