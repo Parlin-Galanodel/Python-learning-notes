@@ -82,6 +82,12 @@ class Stack:
 #########################################################
 
 class Queue:
+    '''
+        A queue is analogy to the queue in relativity.
+        In contrast to stack, it is FIFO(first in first out) structure
+        It could be seen as subclass as Queue even though I write it as 
+        a base class.
+    '''
     def __init__(self):
         self.items=[]
         
@@ -89,6 +95,9 @@ class Queue:
         self.items.append(item)
         
     def dequeue(self):
+    # This method takes linear time as pop happened at the beginning
+    # of an array.
+    # Implementation by linked list might improve efficiency.
         return self.items.pop(0)
         
     def isEmpty(self):
@@ -96,10 +105,17 @@ class Queue:
         
     def size(self):
         return len(self.items)
+    # As a basic data structure, queue is used extensively in simulating
+    # data waited to be managed or tasks to be executed.
+    
         
 #########################################################
 
 class Deque:
+    '''
+        A deque, know as double-ended queue, is a queue which could be 
+        operate on both ends.
+    '''
     def __init__(self):
         self.items=[]
      
@@ -124,6 +140,11 @@ class Deque:
 ###########################################################
 
 class Node:
+    '''
+        Node is the basic building block for implementing a linked list
+        The node must hold at least the item stored in this node and 
+        the reference to next node, like pointer in C.
+    '''
     def __init__(self, initData):
         self.__data=initData
         self.__next=None
@@ -139,10 +160,25 @@ class Node:
         
     def setNext(self, newNext):
         self.__next=newNext
+    
+    # def __del__(self):
+        # pass
+    # This is the destructor in Python(constructor is __new__, not 
+    # __init__). I do not use it since python have automate garbage 
+    # collection. Honestly speaking, __del__ is not called every
+    # time when we del sth in some reasons I do not know yet and 
+    # I do not want to activate gc.collection() manually.
+    # Attention: __del__ would disturb GC if we have write sth
+    # circular referenced.
         
 class singlyCyclelList:
-    def __init__(self):
-        self.head=Node(None)
+    '''
+        As the name, singlyCyclelList is a singly linked list and also
+        a cycle list. I just give a singly cycled list since I believed 
+        it is the easiest version of linked list. Isn't it?
+    '''
+    def __init__(self, item=None):
+        self.head=Node(item)
         self.head.setNext(self.head)
         
     def add(self, item):
@@ -150,16 +186,38 @@ class singlyCyclelList:
         temp.setNext(self.head.getNext())
         self.setNext(temp)
         
+    def isEmpty(self):
+        if self.head.getNext() is self.head \
+            and self.head.getData()==None:
+            return True
+        else:
+            return False
+        # I hope this work, but I think it would fail if we set
+        # the data in head to None. I am confused and I hope I 
+        # would figure it out latter since I would like to read 
+        # books on data structures, uh, after exam.
+        
+    def search(self,item):
+        current=self.head
+        while current.getData() != item:
+            if current.getNext() is self.head:
+                raise Exception('item not in list
+            else:
+                current=current.getNext()
+            return True
+        
     def remove(self, item):
         current=self.head
         prev=None
-        while current != item:
+        while current.getData() != item:
             prev=current
             current=current.getNext()
             if current is self.head:    # is means same object
                 raise Exception('item is not in the list')
         else:
             prev.setNext(current.getNext())
+            # The Node which is just removed is still there with no 
+            # reference and would be deleted when GC is activated.
 
 # Tips:
 #       1. List is Array in C despite the id of elements are not 
