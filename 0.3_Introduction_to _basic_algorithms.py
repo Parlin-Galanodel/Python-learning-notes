@@ -61,7 +61,8 @@ def ChangeMoney(amount=100, coin=ListOfCoins):
         return  0       # no way to change negative amount of money
                         # or with no coin
     else:
-        return ChangeMoney(amount,coin[1:]) + ChangeMoney(amount-coin[0])
+        return ChangeMoney(amount,coin[:-1]) + \
+               ChangeMoney(amount-coin[-1],coin)
         # change the money without largest value coin plus with 
         # the largest coin.
 
@@ -81,6 +82,8 @@ def ChangeMoney(amount=100, coin=ListOfCoins):
 pass
 # I do not have examples in my mind yet. Wikipedia does not 
 # give any example neither TAT, bad luck.
+# But divide and conquer is important basic building block 
+# in algorithms.
 
 
 #########################
