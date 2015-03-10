@@ -7,3 +7,11 @@
  So far, I just review by reading wikipedia and recalling what I knew.
  Hopefully, I could do experiment on my code conveniently and read books
  if I have time after I finished my homework on physics T_T.
+ 
+ This notes consist of very basic introduction part and some topics
+ with a little higher level. All could be used in my computing project
+ on physics.
+ 
+ I just found a website about python problem solving, it's excellent 
+ starting point.
+ (http://interactivepython.org/runestone/static/pythonds/index.html)

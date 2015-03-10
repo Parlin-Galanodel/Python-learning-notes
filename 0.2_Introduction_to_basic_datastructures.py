@@ -1,12 +1,17 @@
-#In reading SICP, there is an amazing view that programming 
+#In reading SICP many years ago, I got an amazing view that programming 
 #is just abstraction(Data abstraction, procedure abstraction etc.)
 #
-#I have heard that CMU removed OOP course since they think it is 
-#anti module and anti parallel. I guess it is because OOP based on 
-#interface used to change state of object and state change is not 
-#a good thing in designing programme aimed to do things parallel.
-#I think immutable values is the reason why functional programming
-#is useful in designing parallel and concurrency model.
+#I have heard that CMU removed OOP course from introduction course
+#since they think it is anti module and anti parallel. 
+#I guess it is because OOP based on interface used to change state
+#of object and state change is not a good thing in designing
+#programme aimed to do things parallel.
+#I think immutable variable is the reason why functional programming
+#is useful in designing parallel and concurrency model. But someone
+#said the function is a grain that too small to design a good 
+#concurrency programme since it would hold tooooo much system resources.
+#It might be true. I have not idea since I do not know CS & system
+#well enough.
 #
 #For me, a novice in both python and OO, OO means encapsulation, 
 #information hiding and inheritance. I think it is a good way to do
@@ -14,8 +19,8 @@
 #since JAVA, an language could be written only in the way of OO, is
 #so popular. 
 #
-#In this introduction, I'd like to introduce some basic data 
-#structures.
+#In this part, I'd like to learn concepts of some basic data 
+#structures by implementing them with python.
 #
 #   Linear Data Structures
 #       -- Stacks, queues, deque, lists
@@ -64,7 +69,7 @@ class Stack:
         return self.items.pop()
         
     def getTop(self):
-        if len(self(items))==0:
+        if len(self.items)==0:
             raise Exception('empty,stack')
         return self.items[-1]
         
@@ -120,23 +125,23 @@ class Deque:
     def __init__(self):
         self.items=[]
      
-    def addFont(self, item):
+    def addFront(self, item):
         self.items.insert(0,item)
         
     def addRear(self,item):
         self.items.append(item)
         
-    def removeFont(self):
-        return self.item.pop(0)
+    def removeFront(self):
+        return self.items.pop(0)
         
     def removeRear(self):
-        return self.item.pop()
+        return self.items.pop()
         
     def isEmpty(self):
         return self.items==[]
         
     def size(self):
-        return len(self.itmes)
+        return len(self.items)
         
 ###########################################################
 
@@ -146,7 +151,7 @@ class Node:
         The node must hold at least the item stored in this node and 
         the reference to next node, like pointer in C.
     '''
-    def __init__(self, initData):
+    def __init__(self, initData=None):
         self.__data=initData
         self.__next=None
     
@@ -172,7 +177,7 @@ class Node:
     # Attention: __del__ would disturb GC if we have write sth
     # circular referenced.
         
-class singlyCyclelList:
+class singlyCycleList:
     '''
         As the name, singlyCyclelList is a singly linked list and also
         a cycle list. I just give a singly cycled list since I believed 
@@ -183,9 +188,9 @@ class singlyCyclelList:
         self.head.setNext(self.head)
         
     def add(self, item):
-        temp=Node(item):
+        temp=Node(item)
         temp.setNext(self.head.getNext())
-        self.setNext(temp)
+        self.head.setNext(temp)
         
     def isEmpty(self):
         if self.head.getNext() is self.head \
@@ -202,10 +207,10 @@ class singlyCyclelList:
         current=self.head
         while current.getData() != item:
             if current.getNext() is self.head:
-                raise Exception('item not in list
+                return False
             else:
                 current=current.getNext()
-            return True
+        return True
         
     def remove(self, item):
         current=self.head
@@ -230,7 +235,7 @@ class singlyCyclelList:
 #               PyObject **ob_item      ;
 #               Py_ssize_t allocated;
 #                                       }
-#               PyListObject            ;
+#             PyListObject            ;
 #       2. Dict in python is implemented by hash table and all the 
 #          operations except sth like iteration all takes constant
 #          time.

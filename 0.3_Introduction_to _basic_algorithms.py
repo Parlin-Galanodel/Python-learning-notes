@@ -3,7 +3,7 @@
 #########################
 
 # In mathematics and computer science, a class of objects or methods
-# exhibit recursive behavior when they can be defined by two 
+# exhibit recursive behaviour when they can be defined by two 
 # properties:
 #    1. A simple base case (or cases)
 #    2. A set of rules that reduce all other cases toward the base case
@@ -65,7 +65,7 @@ def ChangeMoney(amount=100, coin=ListOfCoins):
                ChangeMoney(amount-coin[-1],coin)
         # change the money without largest value coin plus with 
         # the largest coin.
-    # I bullshit it..... the answer seems ridiculous wrong....
+    # I bullshit it..... the answer seems ridiculous huge....
     # would check it later 
 # It is obviously that recursion method is really easy for solving 
 # very complex problems. And it is not hard to find that the method
@@ -134,7 +134,12 @@ def MCforPI(n):#find PI by Monty carlo method
 # Greedy method
 #########################
 pass
+#It might be a higher level topic since wikipedia do not give any 
+#good explanation.
 #########################
 # Dynamic Programming
 #########################
 pass
+#I knew this from MIT introduction to CS open course while this topic 
+#is in the second half on Introduction to Algorithms. Maybe I will
+#back to this topic latter after I know how to implement graph&Trees.

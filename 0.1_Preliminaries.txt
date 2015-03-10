@@ -67,7 +67,15 @@ Induction, Recursion and Reduction:
 # may involve transforming both the input (so it works with the new 
 # problem) and the output (so it's valid for the original problem).
 
+Tips: Python data structures' operation time complexity:
+		https://wiki.python.org/moin/TimeComplexity
 
-Reference: 1.Introduction to Algorithms.
-	   2.wolfram
+
+Reference: 	2.wolfram & wikipedia, a good place to start despite not
+		  a good place to do reseach.
+		1.Introduction to Algorithms.
+		 (I did not borrow this book, just look up some definition
+	 	 and pseudocode in coretext room occasionally, so I am 
+		 not quite sure about the concepts I gave were right or not.)
+
  

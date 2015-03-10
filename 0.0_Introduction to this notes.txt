@@ -25,7 +25,8 @@ Background:
  I hope I could master python since it is interesting, useful, handy script 
  language. OK, also multi-platform. This python learning note is just 
  for making me keeping a note. Also, I hope it could help other non-CS
- students who is learning data structures and algorithms by themself.
+ students who is learning data structures and algorithms by themself if 
+ there is someone found it on github.
 
  I did not review the very basic topics like big O notation and math
  induction.
@@ -33,7 +34,8 @@ Background:
  
  Python supports OOP fully as everything in python is an object. I guess
  this is good news especially when we could write code not in OO way.
- Sounds better than JAVA. In this  note, I'd like to learn both OO and
+ Sounds better than JAVA(just write code in OO style without supports in lower
+ level from language). In this  note, I'd like to learn both OO and
  some basic algorithm.
 
 
@@ -117,9 +119,11 @@ Reference:
 	2. Data Structures and Algorithms with Object-Oriented Design
 	   Patterns in Python by Bruno R. Preiss, B.A.Sc., M.A.Sc.
 	   Ph.D., P.Eng. 
-	   (Very good examples and python code)
+	   (Very good examples in python, while I do not like the fonts.)
 	3. Core Python programming, second edition
 	   (an amazing python tutorial)
 	4. A byte of Pyton (introduction to python basic syntax)
 	5. Python official tutorial. (this is reallly a very good tutorial 
 	   for beginers)
+	6. Python‘¥¬Î∆ Œˆ£¨a chinese book on explaining source code of Cpython,
+	   but I just find one chapter online. Not any chance to get it in library.
