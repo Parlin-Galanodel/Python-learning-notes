@@ -130,8 +130,11 @@ def MCforPI(n):#find PI by Monty carlo method
     return PI
     
     
-#######################################
-# Greedy method & Dynamic Programming
-#######################################
-#
-#
+#########################
+# Greedy method
+#########################
+pass
+#########################
+# Dynamic Programming
+#########################
+pass
