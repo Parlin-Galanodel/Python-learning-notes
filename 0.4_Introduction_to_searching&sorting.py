@@ -41,16 +41,15 @@ def binarySearch(alist, item):
 # I am learning algorithm, so I will implement it on my own again as
 # I did in other part of the notes before I found this tutorial.
 def myBinarySearch(alist, item):
-    l=len(alist)//2
-    print l
-    if alist[l]==item:
-        return True
-    elif l==0:
+    L=len(alist)//2
+    if len(alist)==0:
         return False
-    elif alist[l]>item:
-        return myBinarySearch(alist[:l],item)
-    elif alist[l]<item:
-        return myBinarySearch(alist[l+1:],item)
+    elif alist[L]==item:
+        return True
+    elif alist[L]>item:
+        return myBinarySearch(alist[:L],item)
+    elif alist[L]<item:
+        return myBinarySearch(alist[L+1:],item)
 # I do it by recursion and as mentioned before, iteration method is 
 # much better as less variable to track at the same time. But 
 # recursion version is really easy to be understood. I think my
