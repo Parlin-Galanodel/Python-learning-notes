@@ -65,7 +65,8 @@ def ChangeMoney(amount=100, coin=ListOfCoins):
                ChangeMoney(amount-coin[-1],coin)
         # change the money without largest value coin plus with 
         # the largest coin.
-
+    # I bullshit it..... the answer seems ridiculous wrong....
+    # would check it later 
 # It is obviously that recursion method is really easy for solving 
 # very complex problems. And it is not hard to find that the method
 # used to calculate total ways of changing money is quite slow.
