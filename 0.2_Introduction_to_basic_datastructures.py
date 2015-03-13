@@ -167,8 +167,8 @@ class Node:
     def setNext(self, newNext):
         self.__next=newNext
     
-    # def __del__(self):
-        # pass
+  # def __del__(self):
+  #     pass
     # This is the destructor in Python(constructor is __new__, not 
     # __init__). I do not use it since python have automate garbage 
     # collection. Honestly speaking, __del__ is not called every
@@ -181,7 +181,9 @@ class singlyCycleList:
     '''
         As the name, singlyCyclelList is a singly linked list and also
         a cycle list. I just give a singly cycled list since I believed 
-        it is the easiest version of linked list. Isn't it?
+        it is the easiest version of linked list. In a cycled list,
+        we do not need to maintain the tail node and search would 
+        be easier to be implemented. Isn't it?
     '''
     def __init__(self, item=None):
         self.head=Node(item)
@@ -241,7 +243,6 @@ class singlyCycleList:
 #          time.
 #
 #
-# References: 1. introduction to algorithms.
-#             2. Wikipedia (I do not want to say it, but I did not 
+# References: 1. Wikipedia (I do not want to say it, but I did not 
 #                have time to read books in library and so I used 
 #                wikipedia as cheat sheet)
