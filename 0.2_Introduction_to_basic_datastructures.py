@@ -246,3 +246,5 @@ class singlyCycleList:
 # References: 1. Wikipedia (I do not want to say it, but I did not 
 #                have time to read books in library and so I used 
 #                wikipedia as cheat sheet)
+#                List of data structures:
+#                 (https://en.wikipedia.org/wiki/List_of_data_structures)
