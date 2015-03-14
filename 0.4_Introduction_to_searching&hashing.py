@@ -6,7 +6,7 @@
 # our customised linked lists or queues.
 #
 # I'd like to learning some comparing sort method and try to implement 
-# them in python. The lower bound of comparing sort is NlogN and has 
+# them in python. The lower bound of comparing sort is O(NlogN) and has 
 # been proved theoretically(https://en.wikipedia.org/wiki/Comparison_sort)
 # (https://en.wikipedia.org/wiki/Sorting_algorithm)
 # One of my friends ever told me that bogosort would be great algorithm 
@@ -81,9 +81,8 @@ def myBinarySearch(alist, item):
 #
 # Hashing:
 # Python dictionary is implemented by a hash table. A hash table is 
-# a table map keys to values(which the memory addresses by a hash
-# function). A python list could be seen as hash table from index
-# to its value in some degree.
+# a table map keys to values. A python list could be seen as hash 
+# table from index to its value in some degree.
 # If different keys were hash to a same address, it is called 
 # collision.Given a collection of items, a hash function that maps 
 # each item into a unique slot is referred to as a perfect hash
@@ -98,25 +97,22 @@ def myBinarySearch(alist, item):
 #       *we would take the digits and divide them into groups of 2
 #       *(43,65,55,46,01). After the addition, 43+65+55+46+01, we 
 #       *get 210. If we assume our hash table has 11 slots, then we
-#       *need to perform the extra step of dividing by 11 and 
+#       *need to perform the extra step of dividing by 11 and
 #       *keeping the remainder. In this case 210 % 11 is 1, so the
 #       *phone number 436-555-4601 hashes to slot 1. Some folding
 #       *methods go one step further and reverse every other piece
 #       *before the addition. For the above example, we get 43+56+
 #       *55+64+01=219 which gives 219 % 11=10.
-# 2. Mid-square Method: 
+# 2. Mid-square Method:
 #       *We first square the item, and then extract some portion 
 #       *of the resulting digits. For example, if the item were 44,
 #       *we would first compute 442=1,936. By extracting the middle
 #       *two digits, 93, and performing the remainder step, we get
-#       *5 (93 % 11). Table 5 shows items under both the remainder
-#       *method and the mid-square method. You should verify that
-#       *you understand how these values were computed.
+#       *5 (93 % 11).
 def hash(astring, tablesize):
     sum = 0
     for pos in range(len(astring)):
         sum = sum + ord(astring[pos])
-
     return sum%tablesize
 # The important thing to remember is that the hash function has to be
 # efficient so that it does not become the dominant part of the storage
@@ -139,7 +135,7 @@ def hash(astring, tablesize):
 #   newLocation = (startingValue + stepSize) % arraySize
 # Given an ordinary hash function H(x), a linear probing function
 # (H(x, i)) would be:
-#        H(x, i) =  (H(x) + i) (mod n), i=k% sizeoftable
+#        H(x, i) =  (H(x) + i)(mod n), i=k% sizeoftable
 # Here H(x) is the starting value, n the size of the hash table,
 # and the stepsize is i in this case. Often, the step size is one;
 # that is, the array cells that are probed are consecutive in the hash
@@ -153,7 +149,7 @@ def hash(astring, tablesize):
 # Alternative to linear probing, quadratic probing could be applied
 # and it just change linear step to quadratic polynomial.
 # My favourite method is to chaining the extra items to the same location
-# hash table as a singly liked list.
+# in hash table as a singly liked list.
 class HashTable:
     def __init__(self,size=11):
         self.size = 11              #size is arbitrary and
@@ -204,9 +200,29 @@ class HashTable:
                     stop = True
         return data
 
-    def __getitem__(self,key):
+    def __getitem__(self,key):      # magical method which allows us 
+                                    # get item by index of the key
         return self.get(key)
 
-    def __setitem__(self,key,data):
+    def __setitem__(self,key,data): # magical method allows us setting
+                                    # item by []
         self.put(key,data)
-        
+# Hash table could be searched or indexed in constant time O(1) while
+# this would be more complex in practical since collisions.
+# A well-known rule to approximate the number of comparisons necessary 
+# to search for an item. The load factor, lambda, is the most important
+# piece of information we need to analyze the result of a hash table.
+# Conceptually, if lambda is small, then there is lower chance of 
+# collisions which means the items are more likely to be in the slots
+# where they belong. If λ is large, meaning that the table is filling
+# up, then there are more and more collisions. This means that
+# collision resolution is more difficult, requiring more comparisons
+# to find an empty slot. With chaining, increased collisions means
+# an increased number of items on each chain.
+#
+# For a successful search using open addressing with linear probing,
+# the average number of comparisons is approximately 1/2*(1+1/(1−λ)) and
+# an unsuccessful search gives 1/2(1+(1/(1−λ))^2) If we are using
+# chaining, the average number of comparisons is 1+λ/2 for the
+# successful case, and simply λ comparisons if the search is
+# unsuccessful.
