@@ -6,7 +6,7 @@
 # our customised linked lists or queues.
 #
 # I'd like to learning some comparing sort method and try to implement 
-# them in python. The lower bound of comparing sort is O(NlogN) and has 
+# them in python. The lower bound of comparing sort is Omega(NlogN) and has 
 # been proved theoretically(https://en.wikipedia.org/wiki/Comparison_sort)
 # (https://en.wikipedia.org/wiki/Sorting_algorithm)
 # One of my friends ever told me that bogosort would be great algorithm 
