@@ -71,9 +71,9 @@ Tips: Python data structures' operation time complexity:
 		https://wiki.python.org/moin/TimeComplexity
 
 
-Reference: 	2.wolfram & wikipedia, a good place to start despite not
+Reference: 	1.wolfram & wikipedia, a good place to start despite not
 		  a good place to do reseach.
-		1.Introduction to Algorithms.
+		2.Introduction to Algorithms.
 		 (I did not borrow this book, just look up some definition
 	 	 and pseudocode in coretext room occasionally, so I am 
 		 not quite sure about the concepts I gave were right or not.)
