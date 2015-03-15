@@ -48,8 +48,42 @@ def selectionSort(alist):
        temp = alist[fillslot]
        alist[fillslot] = alist[positionOfMax]
        alist[positionOfMax] = temp
+# sadly, I failed to figure out how to implement it recursively even
+# just rewrite the iteration version to recursive one because the 
+# annoying nested for loop.
 # Selection sort makes the same number of comparisons as the bubble
 # sort and is therefore also O(n^2). Due to the reduction in the number
 # of exchanges, the selection sort typically executes faster in
 # benchmark studies.
 #
+###################################
+# Insertion sort & Shell sort
+# Insertion sort, which is also O(n^2), works by maintaining a
+# sorted sublist in the lower position  of the list. Each item in 
+# the list is inserted back to the previous sublist. 
+# It is obviously that a list with one item is already sorted. The 
+# remaining items in the whole list is inserted to the sublist original
+# one element sublist to right position.
+def insertionSort(alist):
+    for index in range(1,len(alist)):
+        currentvalue = alist[index]
+        position = index
+        while position>0 and alist[position-1]>currentvalue:
+            alist[position]=alist[position-1]   # this tells why 
+                                                # insert operation to
+                                                # a list is O(n)
+            # list shifting cost lots of time.
+            position = position-1
+        alist[position]=currentvalue
+# The shell sort, sometimes called the “diminishing increment sort,”
+# improves on the insertion sort by breaking the original list into
+# a number of smaller sublists, each of which is sorted using an
+# insertion sort. 
+        
+        
+        
+        
+        
+        
+        
+        

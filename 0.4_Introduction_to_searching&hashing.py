@@ -62,22 +62,7 @@ def myBinarySearch(alist, item):
 # much better as less variable to track at the same time. But 
 # recursion version is really easy to be understood. I think my
 # recursion version is better than that on the tutorial.
-#   In C:
-#binarySearch(int a[], int n, int key){
-#    int low = 0;
-#    int high = n - 1;
-#    while(low<= high){
-#        int mid = (low + high)/2;
-#        int midVal = a[mid];
-#        if(midVal<key)
-#            low = mid + 1;
-#        else if(midVal>key)
-#            high = mid - 1;
-#        else
-#            return mid;
-#    }
-#    return -1;
-# }
+#
 #
 # Hashing:
 # Python dictionary is implemented by a hash table. A hash table is 

@@ -115,7 +115,7 @@ def MCforPI(n):#find PI by Monty carlo method
     # to make this block more efficiency, list could be replaced 
     # by generator, a small optimization
     PI='%.10f' % (1.*len(circle)/len(points)/0.25)
-    #I checked the value by another code below, to list cost too much 
+    #I checked the value by another code below, a list cost too much 
     #memory
     
 #       count=0
