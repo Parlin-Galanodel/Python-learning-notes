@@ -1,0 +1,17 @@
+Cpython implemented by C. I hope I remember enough knowledge on C programming 
+to understand python source code.
+
+The python code I used is Python 2.7.9rc1, released in 2014-11-26. New version!
+I'd like to read Objects part firstly and then parser.
+
+Python implementation is composed by three main part:
+	1. the file groups
+	2. core python VM/interpreter
+	3. runtime interface/environment
+
+  File groups include the core modules, installed libraries and user defined modules.
+
+  Runtime interface include memory allocator, object/type structures.
+
+  Core python VM is a virtual machine which run python code by parsing and compiling
+  it into python byte code.
