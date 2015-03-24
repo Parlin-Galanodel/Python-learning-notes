@@ -46,7 +46,7 @@ def hanoi(height, beginning='begin pole', end='end pole'\
 def moveDisk(position1, position2):
     print 'move disk from %s to %s' %(position1, position2)
 
-# If I do not remember the wrong, I believe, SICP(Structure and 
+# If I do not remember wrong, I believe, SICP(Structure and 
 # Interpretation of Computer Programs) gave an example on 
 # changing money.
 #

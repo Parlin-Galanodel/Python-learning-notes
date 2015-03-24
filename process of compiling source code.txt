@@ -1,0 +1,41 @@
+Python is an interpreted language. Interpreter gives python the flexibility that
+code could run without compiling. This is good for rapid development.
+
+Compiled language must be compiled to native machine code before being run and 
+they are always much faster than interpreted language. To be honest, I think the
+main reason why python is slow is the result of dynamic type and GC instead of
+interpreter. Of course, the global interpreter lock(GIL) also make it less
+efficient on modern multi core CPU.
+
+We have abandoned C++ since 2008 in imperial due to some unknown reason (maybe 
+because it is too hard). I am not familiar with C++ despite I used C. I would like
+to review the process of compiling C source code. C is a imperative language and
+also static typed strong typed while weak type check(I am not sure since many 
+people think C is weak typed language).
+
+I just review by my own memory and force me to write it down, no responsibility
+for the errors in this procedure.
+
+The whole compiling procedure could be seen as 5 sub-process: Precessing, compiling,
+optimisation, assembly and linking.
+1. preprocessing is do substitution and judgement by macro definitions and include
+	necessary files.(I heard comments would also be removed, no idea whether it is
+	true)
+2. compiling process is very complex and I think it would include lexical analysing,
+	syntax analysing, semantic analysing, some kind of intermediate code generating,
+	optimising the intermediate code, parsing the intermediate code to generate 
+	assembly code and so on. It is a huge project and there are many books, the 
+	so-called dragon book or tiger book explaining the process. I do not expect 
+	myself to fully understand it since I am not a CS student despite I am 
+	interested in implementing a calculator by python or lisp.
+3. optimisation, really no idea what happened in this processing. It is related
+	to the compiling process and also related to different hardwares.
+4. assembly. every source code file would be translated to native machine code
+	separately and each file might consist of source segment and data segment.
+5. linking. the native code we got from step 4 might not work since they may 
+	rely on other modules and thus could only work when linked to related module.
+	There are two ways of linking: static and dynamic. But I am not sure what's 
+	the difference between them. I guess dynamic linked files would exist like 
+	dll files in windows or so files in linux.
+	
+	
