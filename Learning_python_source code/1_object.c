@@ -20,7 +20,7 @@ in a proper way to make it easy to read. intoobject.h showed int object.
 	#define _PyObject_HEAD_EXTRA            \
 		struct _object *_ob_next;           \
 		struct _object *_ob_prev;
-		
+	
 This structure is elementary block for all python object. PyObject is just a struct
 contains PyObject_HEAD. PyVarObject is similar.
 
@@ -132,13 +132,13 @@ type pointer is the way to give type information of an object:
 
 A basic python object is a C struct variable that contains object reference count
 and a pointer to indicate object type. And from definiton of Pytypeobject in 
-object.h I thinke the type is just indicated by a name in type 'string'. I
-think this is consistent with python's duck type as type is just a string and
+object.h I thinke the type is just indicated by a name in type 'string', like 'int'.
+I think this is consistent with python's duck type as type is just a string and
 all object has same method could be used as similar object.
 
 If the object is a container of many element, PyObject_VAR_HEAD would be used
 and it contains one more information(the size of the object). I think this 
-is because no sting type or list which could contain arbitrary type in C and so
+is because no string type or list which could contain arbitrary type in C and so
 container object has to maintain the size information explicity.
 
 An object has to include PyObject_HEAD and this is kind of inheritance. An
@@ -155,8 +155,8 @@ python int object. This explains why long in python is just a special case of
 int. But I am not quite sure how some very large number could be stored in 
 PyIntObject......
 
-So, I know that why all python object is an instance of object(new style class)
-now.
+So far, I know why all python object is an instance of object(new style class),
+how an object is designed and managed.
 
 
 
